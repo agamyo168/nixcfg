@@ -4,6 +4,7 @@ let
 	myAliases = {
 		ll = "ls -l";
 		".." = "cd ..";
+		dotfiles = "cd ~/.dotfiles";
 	};
 in {
 	programs.bash = {
