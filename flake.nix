@@ -21,7 +21,7 @@
 		nixosConfigurations = {
 			nixos = lib.nixosSystem {
 				inherit system;
-				modules = [ ./system/configuration.nix ];
+				modules = [ ./hosts/jimbo/configuration.nix ];
 			};
 		};
 		homeConfigurations = {

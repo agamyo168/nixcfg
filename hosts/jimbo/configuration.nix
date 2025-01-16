@@ -9,13 +9,17 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       # Include flatpak configurations
-      ./flatpak.nix
+      ../../modules/flatpak.nix
       # Include hypland configurations
-      ./hyprland-config.nix
+       ../../modules/hyprland-config.nix
       # Include applications configurations
-      ./apps.nix
+       ../../modules/apps.nix
       # Include docker configurations
-      ./docker.nix	
+       ../../modules/docker.nix
+      # Include obsidian configurations
+       ../../modules/obsidian.nix
+      # Include syncthing configurations
+       ../../modules/syncthing.nix
     ];
 
   # Bootloader.
