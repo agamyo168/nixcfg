@@ -23,6 +23,10 @@
 				inherit system;
 				modules = [ ./hosts/jimbo/configuration.nix ];
 			};
+			perry = lib.nixosSystem {
+				inherit system;
+				modules = [ ./hosts/perry/configuration.nix ];
+			};
 		};
 		homeConfigurations = {
 			jimbo = home-manager.lib.homeManagerConfiguration {
