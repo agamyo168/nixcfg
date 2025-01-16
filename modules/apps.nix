@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     #Apps
-    syncthing
     #programming
     nodejs_20
     #pkgs.python313
