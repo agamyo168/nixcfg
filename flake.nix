@@ -13,7 +13,7 @@
 	   	inputs.nixpkgs.follows = "nixpkgs";
 	  	};		
 	};
-	outputs = { self, nixpkgs, home-manager, ... }@inputs:
+	outputs = { self, nixpkgs, home-manager, stylix, ... }:
 	let 
 		lib = nixpkgs.lib;
 		system = "x86_64-linux";
@@ -24,12 +24,11 @@
 				inherit system;
 				modules = [
 					 ./hosts/jimbo/configuration.nix
-					 inputs.stylix.nixosModules.stylix
 						 ];
 			};
 			perry = lib.nixosSystem {
 				inherit system;
-				modules = [ ./hosts/perry/configuration.nix ];
+				modules = [ ./hosts/perry/configuration.nix stylix.nixosModules.stylix ];
 			};
 		};
 		homeConfigurations = {
