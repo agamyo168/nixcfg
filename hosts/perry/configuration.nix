@@ -21,6 +21,8 @@
       # Include syncthing configurations
        ../../modules/syncthing.nix
     ];
+  # Stylix Theme
+  stylix.image = "/run/current-system/sw/share/backgrounds/gnome/blobs-l.svg";
 
   # Bootloader.
   # Specify the EFI system partition
