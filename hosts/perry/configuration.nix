@@ -8,21 +8,16 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # Include flatpak configurations
-      ../../modules/flatpak.nix
-      # Include hypland configurations
-       ../../modules/hyprland-config.nix
-      # Include applications configurations
-       ../../modules/apps.nix
-      # Include docker configurations
-       ../../modules/docker.nix
-      # Include obsidian configurations
-       ../../modules/obsidian.nix
-      # Include syncthing configurations
-       ../../modules/syncthing.nix
     ];
   # Stylix Theme
-  stylix.image = "/run/current-system/sw/share/backgrounds/gnome/blobs-l.svg";
+  stylix.enable = true;
+  stylix.image = ./bitmoon.png;
+#  stylix.image = pkgs.fetchurl {
+#    url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
+#    sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
+#  };
+  stylix.polarity = "dark";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruber.yaml";
 
   # Bootloader.
   # Specify the EFI system partition
@@ -124,7 +119,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
+#    wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

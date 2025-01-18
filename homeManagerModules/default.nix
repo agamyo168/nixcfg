@@ -1,0 +1,3 @@
+{ ... }: {
+	imports = [ ./shells/sh.nix ];
+}
