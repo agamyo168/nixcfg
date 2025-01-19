@@ -5,6 +5,11 @@
   # manage.
   home.username = "jimbo";
   home.homeDirectory = "/home/jimbo";
+  # allow unfree software
+  nixpkgs.config.allowUnfree = true; # You should use predicate
+  #nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg)[
+  #	obsidian 
+  #];  
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

@@ -1,3 +1,8 @@
-{ ... }: {
-	imports = [ ./shells/sh.nix ];
+{ ... }:
+{
+   imports = [
+	./apps
+	./shells
+];
 }
+
