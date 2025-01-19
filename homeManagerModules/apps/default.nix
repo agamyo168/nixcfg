@@ -8,6 +8,7 @@
 	./apps.nix
 	./git.nix
 	./nixvim.nix
+	./vscodium.nix
 	#./syncthing.nix
 	#./hyprland-config.nix
 ];
