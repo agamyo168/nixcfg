@@ -2,6 +2,7 @@
 {
   imports = [
     ./services
+    ./apps
   ];
 }
 
