@@ -13,8 +13,6 @@
     mysql84 mysql-workbench
     #Postgres
     pgadmin4
-    #Versioning
-    git gh
     #utility
     postman #backend utility for proping/testing api
     yt-dlp ffmpeg_7 mpv obs-studio krita libreoffice-qt 
