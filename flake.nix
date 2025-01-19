@@ -16,11 +16,12 @@
 	   	inputs.nixpkgs.follows = "nixpkgs";
 	  	};		
 	};
-	outputs = { self, nixpkgs, home-manager, stylix, ... }:
+	outputs = { self, nixpkgs, home-manager, stylix, nixvim, ... }@inputs:
 	let 
 		lib = nixpkgs.lib;
 		system = "x86_64-linux";
 		pkgs = nixpkgs.legacyPackages.${system};
+		
 	in {
 		nixosConfigurations = {
 			nixos = lib.nixosSystem {
@@ -44,6 +45,7 @@
 				modules = [ 
 				   ./home.nix
 				   ./homeManagerModules
+				   nixvim.homeManagerModules.nixvim
 				 ];
 			};
 		};
