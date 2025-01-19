@@ -1,8 +1,8 @@
 { ... }:
 {
-   imports = [
-	./apps
-	./shells
-];
+  imports = [
+    ./apps
+    ./shells
+  ];
 }
 
