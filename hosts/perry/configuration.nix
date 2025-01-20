@@ -6,15 +6,16 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
   # Bootloader.
   # Specify the EFI system partition
-#  fileSystems."/boot" = {
-#    device = "/dev/nvme0n1p7"; # Replace with your actual EFI partition
-#    fsType = "vfat";      # Typically FAT32 for EFI
-#  };
+  #  fileSystems."/boot" = {
+  #    device = "/dev/nvme0n1p7"; # Replace with your actual EFI partition
+  #    fsType = "vfat";      # Typically FAT32 for EFI
+  #  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -60,10 +61,6 @@
     variant = "";
     options = "grp:alt_shift_toggle";
   };
-#  services.xserver.layout = "us,ara";
-#  services.xserver.xkbVariant = "";
-#  services.xserver.xkbOptions = "grp:alt_shift_toggle";  
-
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -93,7 +90,7 @@
     description = "jimbo";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
   #Enable fonts.fontDir
