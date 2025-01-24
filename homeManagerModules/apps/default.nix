@@ -8,7 +8,6 @@
     ./nixvim.nix
     ./vscodium.nix
     ./discord.nix
-    ./gnome.nix
   ];
 }
 
