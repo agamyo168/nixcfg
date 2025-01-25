@@ -22,6 +22,7 @@
     krita
     htop
     fastfetch
+    gparted
     libreoffice-qt
     pdfsam-basic #pdf utility
     shotcut #video editing UI
