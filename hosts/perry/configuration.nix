@@ -10,12 +10,6 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  # Bootloader.
-  # Specify the EFI system partition
-  #  fileSystems."/boot" = {
-  #    device = "/dev/nvme0n1p7"; # Replace with your actual EFI partition
-  #    fsType = "vfat";      # Typically FAT32 for EFI
-  #  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -29,7 +23,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  # Default shell
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
   # Set your time zone.
   time.timeZone = "Africa/Cairo";
 
