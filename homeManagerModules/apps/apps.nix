@@ -20,6 +20,8 @@
     mpv
     obs-studio
     krita
+    htop
+    fastfetch
     libreoffice-qt
     pdfsam-basic #pdf utility
     shotcut #video editing UI
