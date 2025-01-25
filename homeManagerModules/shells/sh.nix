@@ -19,4 +19,8 @@ in
     enable = true;
     shellAliases = myAliases;
   };
+  # Terminal
+  programs.starship = {
+    enable = true;
+  };
 }
