@@ -1,4 +1,5 @@
 { ... }: {
-  imports = [ ./noisetorch.nix ];
+
+  imports = [ ./noisetorch.nix ./steam.nix ];
 
 }
