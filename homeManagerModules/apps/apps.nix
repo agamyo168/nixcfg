@@ -15,7 +15,6 @@
     pgadmin4
     #utility
     postman #backend utility for proping/testing api
-    yt-dlp
     ffmpeg_7
     mpv
     obs-studio
