@@ -1,8 +1,10 @@
-{config, pkgs, ...}:
+{ config, lib, pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    #Apps
-    obsidian
-  	  
-];
+  options.modules.obsidian.enable = lib.mkEnableOption "";
+  config = lib.mkIf config.modules.obsidian.enable {
+    home.packages = with pkgs; [
+      #Apps
+      obsidian
+    ];
+  };
 }

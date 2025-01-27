@@ -1,12 +1,15 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    gnome-tweaks
-    dconf-editor
-    # #https://github.com/SUPERCILEX/gnome-clipboard-history
-    gnomeExtensions.clipboard-history # Alt + F2 then r to restart gnome shell then write this to terminal gnome-extensions enable clipboard-history@alexsaveau.dev
-    gnomeExtensions.paperwm
-  ];
+  options.modules.gnome-extensions.enable = lib.mkEnableOption "";
+  config = lib.mkIf config.modules.gnome-extensions.enable {
+    home.packages = with pkgs; [
+      gnome-tweaks
+      dconf-editor
+      # #https://github.com/SUPERCILEX/gnome-clipboard-history
+      gnomeExtensions.clipboard-history # Alt + F2 then r to restart gnome shell then write this to terminal gnome-extensions enable clipboard-history@alexsaveau.dev
+      gnomeExtensions.paperwm
+    ];
+  };
 
   # I don't know how to tweak this yet
   # dconf = {

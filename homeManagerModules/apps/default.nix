@@ -3,7 +3,7 @@
   imports = [
     ./distrobox.nix
     ./obsidian.nix
-    ./apps.nix
+    # ./apps.nix
     ./git.nix
     ./nixvim.nix
     ./vscodium.nix

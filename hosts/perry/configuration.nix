@@ -24,7 +24,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
   # Default shell
-  programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
   # Set your time zone.
   time.timeZone = "Africa/Cairo";
@@ -92,8 +91,9 @@
   #Enable fonts.fontDir
   fonts.fontDir.enable = true;
 
-  # Install firefox.
   programs.firefox.enable = true;
+  programs.fish.enable = true;
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

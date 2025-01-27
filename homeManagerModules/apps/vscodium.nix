@@ -1,14 +1,17 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
-  # This installs vscodium and sets up extensions
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide # Nix language LSP
+  options.modules.vscodium.enable = lib.mkEnableOption "";
+  config = lib.mkIf config.modules.vscodium.enable {
+    # This installs vscodium and sets up extensions
+    programs.vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide # Nix language LSP
+      ];
+    };
+    home.packages = with pkgs; [
+      pkgs.nixpkgs-fmt # Nix language formatter
     ];
   };
-  home.packages = with pkgs; [
-    pkgs.nixpkgs-fmt # Nix language formatter
-  ];
 }
