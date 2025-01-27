@@ -41,15 +41,10 @@
 
     # Wayland
 
-
-    # theme.enable = true;
-    # firefox.enable = true;
-    # fish.enable = true;
     discord.enable = true;
     obsidian.enable = true;
     gnome-extensions.enable = true;
 
-    # Development
     vscodium.enable = true;
     git.enable = true;
 
