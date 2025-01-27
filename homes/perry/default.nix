@@ -44,7 +44,6 @@
     discord.enable = true;
     obsidian.enable = true;
     gnome-extensions.enable = true;
-
     vscodium.enable = true;
     git.enable = true;
 
