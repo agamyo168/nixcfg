@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
-  options.modules.git.enable = lib.mkEnableOption "";
-  config = lib.mkIf config.modules.git.enable {
+  options.modules.nixvim.enable = lib.mkEnableOption "";
+  config = lib.mkIf config.modules.nixvim.enable {
     programs.nixvim = {
       enable = true;
       colorschemes.catppuccin.enable = true;

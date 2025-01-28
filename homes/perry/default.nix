@@ -15,8 +15,8 @@
     #Database--
     dbeaver-bin
     #MySQL
-    mysql84
-    mysql-workbench
+    # mysql84
+    # mysql-workbench
     #Postgres
     pgadmin4
     #utility
@@ -37,15 +37,14 @@
   ];
 
   modules = {
-    # X11
-
-    # Wayland
 
     discord.enable = true;
     obsidian.enable = true;
     gnome-extensions.enable = true;
     vscodium.enable = true;
     git.enable = true;
+    distrobox.enable = true;
+    nixvim.enable = true;
 
   };
   # Home Manager needs a bit of information about you and the paths it should
