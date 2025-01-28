@@ -8,6 +8,8 @@
     ./vscodium.nix
     ./discord.nix
     ./yt-dlp.nix
+    ./firefox
+    ./vivaldi
   ];
 }
 

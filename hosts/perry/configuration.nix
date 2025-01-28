@@ -91,7 +91,6 @@
   #Enable fonts.fontDir
   fonts.fontDir.enable = true;
 
-  programs.firefox.enable = true;
   programs.fish.enable = true;
 
 

@@ -19,10 +19,15 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
   outputs = { self, nixpkgs, home-manager, stylix, nixvim, niri, ... }@inputs:
     let
+      inherit (self) outputs;
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -48,6 +53,7 @@
       homeConfigurations = {
         jimbo = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home.nix
             ./homeManagerModules
@@ -57,6 +63,7 @@
         };
         perry = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./homes/perry
             nixvim.homeManagerModules.nixvim
