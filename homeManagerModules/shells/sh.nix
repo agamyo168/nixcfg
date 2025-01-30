@@ -6,8 +6,8 @@ let
     ll = "ls -l";
     ".." = "cd ..";
     dotfiles = "cd ~/.dotfiles";
-    "flake-switch" = "sh sudo nixos-rebuild switch --flake ~/.dotfiles#$HOSTNAME";
-    "home-switch" = "sh home-manager switch --flake ~/.dotfiles#$HOSTNAME";
+    "flake-switch" = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+    "home-switch:perry" = "home-manager switch --flake ~/.dotfiles#perry";
   };
 in
 {

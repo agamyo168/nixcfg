@@ -34,6 +34,8 @@
     #stow # tool for symlink managing
     # Security util
     burpsuite
+    #flashcards
+    anki
   ];
 
   modules = {
@@ -45,7 +47,7 @@
     git.enable = true;
     distrobox.enable = true;
     nixvim.enable = true;
-    # vivaldi.enable = true;
+    vivaldi.enable = true;
     firefox.enable = true;
 
   };
