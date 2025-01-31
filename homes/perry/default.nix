@@ -36,6 +36,9 @@
     burpsuite
     #flashcards
     anki
+    # boot
+    #ventoy
+    ventoy-full
   ];
 
   modules = {
