@@ -39,6 +39,7 @@
     # boot
     #ventoy
     ventoy-full
+    tealdeer
   ];
 
   modules = {
