@@ -40,6 +40,8 @@
     #ventoy
     ventoy-full
     tealdeer
+    #nix
+    rippkgs
   ];
 
   modules = {

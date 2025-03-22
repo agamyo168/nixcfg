@@ -23,6 +23,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+
+
   # Default shell
   users.defaultUserShell = pkgs.fish;
   # Set your time zone.
