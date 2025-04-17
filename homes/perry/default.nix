@@ -16,7 +16,7 @@
     dbeaver-bin
     #MySQL
     # mysql84
-    # mysql-workbench
+    mysql-workbench
     #Postgres
     pgadmin4
     #utility
@@ -28,12 +28,14 @@
     htop
     fastfetch
     gparted
+    github-desktop
     libreoffice-qt
     pdfsam-basic #pdf utility
     shotcut #video editing UI
     #stow # tool for symlink managing
     # Security util
     burpsuite
+    ngrok
     #flashcards
     anki
     # boot

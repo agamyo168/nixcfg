@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -46,12 +47,7 @@
     LC_TIME = "ar_EG.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -93,8 +89,6 @@
   };
   #Enable fonts.fontDir
   fonts.fontDir.enable = true;
-
-  programs.fish.enable = true;
 
 
   # Allow unfree packages

@@ -15,17 +15,17 @@
       url = "github:nix-community/nixvim/nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
-  outputs = { self, nixpkgs, home-manager, stylix, nixvim, niri, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nixvim, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib;
@@ -44,8 +44,7 @@
         perry = lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/perry/configuration.nix
-            ./nixosModules
+            ./hosts/perry
             stylix.nixosModules.stylix
           ];
         };
@@ -58,7 +57,7 @@
             ./home.nix
             ./homeManagerModules
             nixvim.homeManagerModules.nixvim
-            niri.homeModules.niri
+            # niri.homeModules.niri
           ];
         };
         perry = home-manager.lib.homeManagerConfiguration {
@@ -67,7 +66,7 @@
           modules = [
             ./homes/perry
             nixvim.homeManagerModules.nixvim
-            niri.homeModules.niri
+            # niri.homeModules.niri
           ];
         };
       };
