@@ -35,12 +35,12 @@
     in
     {
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/jimbo/configuration.nix
-          ];
-        };
+        # nixos = lib.nixosSystem {
+        #   inherit system;
+        #   modules = [
+        #     ./hosts/jimbo/configuration.nix
+        #   ];
+        # };
         perry = lib.nixosSystem {
           inherit system;
           modules = [
@@ -50,16 +50,7 @@
         };
       };
       homeConfigurations = {
-        jimbo = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            ./home.nix
-            ./homeManagerModules
-            nixvim.homeManagerModules.nixvim
-            # niri.homeModules.niri
-          ];
-        };
+
         perry = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
