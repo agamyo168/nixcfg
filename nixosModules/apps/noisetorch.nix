@@ -1,4 +1,1 @@
-{ pkgs, config, ... }:
-{
-  programs.noisetorch.enable = true;
-}
+{ pkgs, config, ... }: { programs.noisetorch.enable = true; }

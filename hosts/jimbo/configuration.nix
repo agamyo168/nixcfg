@@ -5,22 +5,21 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      # Include flatpak configurations
-      ../../modules/flatpak.nix
-      # Include hypland configurations
-       ../../modules/hyprland-config.nix
-      # Include applications configurations
-       ../../modules/apps.nix
-      # Include docker configurations
-       ../../modules/docker.nix
-      # Include obsidian configurations
-       ../../modules/obsidian.nix
-      # Include syncthing configurations
-       ../../modules/syncthing.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    # Include flatpak configurations
+    ../../modules/flatpak.nix
+    # Include hypland configurations
+    ../../modules/hyprland-config.nix
+    # Include applications configurations
+    ../../modules/apps.nix
+    # Include docker configurations
+    ../../modules/docker.nix
+    # Include obsidian configurations
+    ../../modules/obsidian.nix
+    # Include syncthing configurations
+    ../../modules/syncthing.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -67,10 +66,9 @@
     variant = "";
     options = "grp:alt_shift_toggle";
   };
-#  services.xserver.layout = "us,ara";
-#  services.xserver.xkbVariant = "";
-#  services.xserver.xkbOptions = "grp:alt_shift_toggle";  
-
+  #  services.xserver.layout = "us,ara";
+  #  services.xserver.xkbVariant = "";
+  #  services.xserver.xkbOptions = "grp:alt_shift_toggle";  
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -99,9 +97,10 @@
     isNormalUser = true;
     description = "jimbo";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    packages = with pkgs;
+      [
+        #  thunderbird
+      ];
   };
   #Enable fonts.fontDir
   fonts.fontDir.enable = true;
@@ -114,10 +113,11 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      #  wget
+    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

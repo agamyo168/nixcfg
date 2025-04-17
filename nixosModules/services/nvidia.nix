@@ -37,8 +37,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-
-
   hardware.nvidia.prime = {
     # Sync -> run dedicated all time
     # sync.enable = true;

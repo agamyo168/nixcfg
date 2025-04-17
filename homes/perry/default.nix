@@ -1,10 +1,5 @@
-{ lib
-, pkgs
-, ...
-}: {
-  imports = [
-    ../../homeManagerModules
-  ];
+{ lib, pkgs, ... }: {
+  imports = [ ../../homeManagerModules ];
 
   home.packages = with pkgs; [
     #Apps programming
@@ -12,38 +7,42 @@
     #pkgs.python313
     (python3.withPackages (ps: with ps; [ numpy pandas jupyter ]))
     #python312Packages.jupyter-core opencv vscode
+
     #Database--
     dbeaver-bin
-    #MySQL
-    # mysql84
     mysql-workbench
-    #Postgres
     pgadmin4
+
     #utility
-    postman #backend utility for proping/testing api
-    ffmpeg_7
-    mpv
-    obs-studio
-    krita
     htop
     fastfetch
     gparted
-    github-desktop
     libreoffice-qt
-    pdfsam-basic #pdf utility
-    shotcut #video editing UI
-    #stow # tool for symlink managing
-    # Security util
+    pdfsam-basic # pdf utility
+    anki # flashcards
+
+    #network
     burpsuite
+    postman # backend utility for proping/testing api
     ngrok
-    #flashcards
-    anki
-    # boot
-    #ventoy
+    #tailscale
+
+    #media
+    mpv
+    shotcut # video editing UI
+    ffmpeg_7
+    obs-studio
+    krita
+
+    #boot
     ventoy-full
-    tealdeer
+
+    #ssh
+    snips-sh
+
     #nix
     rippkgs
+    tealdeer
   ];
 
   modules = {
@@ -57,7 +56,6 @@
     nixvim.enable = true;
     vivaldi.enable = true;
     firefox.enable = true;
-
   };
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

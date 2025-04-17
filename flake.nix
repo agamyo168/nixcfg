@@ -32,21 +32,11 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
-    in
-    {
+    in {
       nixosConfigurations = {
-        # nixos = lib.nixosSystem {
-        #   inherit system;
-        #   modules = [
-        #     ./hosts/jimbo/configuration.nix
-        #   ];
-        # };
         perry = lib.nixosSystem {
           inherit system;
-          modules = [
-            ./hosts/perry
-            stylix.nixosModules.stylix
-          ];
+          modules = [ ./hosts/perry stylix.nixosModules.stylix ];
         };
       };
       homeConfigurations = {

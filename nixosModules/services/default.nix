@@ -1,9 +1,3 @@
-{ ... }:
-{
-  imports = [
-    ./docker.nix
-    ./syncthing.nix
-    ./nvidia.nix
-    ./tailscale
-  ];
+{ ... }: {
+  imports = [ ./docker.nix ./syncthing.nix ./nvidia.nix ./tailscale ];
 }

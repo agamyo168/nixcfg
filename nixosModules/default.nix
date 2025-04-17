@@ -1,10 +1,2 @@
-{ ... }:
-{
-  imports = [
-    ./services
-    ./apps
-    ./desktops
-    ./stylix
-  ];
-}
+{ ... }: { imports = [ ./services ./apps ./desktops ./stylix ]; }
 

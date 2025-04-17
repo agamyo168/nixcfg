@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     #Apps
     docker_27

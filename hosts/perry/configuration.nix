@@ -5,12 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-    ];
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -24,8 +23,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-
 
   # Default shell
   users.defaultUserShell = pkgs.fish;
@@ -46,8 +43,6 @@
     LC_TELEPHONE = "ar_EG.UTF-8";
     LC_TIME = "ar_EG.UTF-8";
   };
-
-
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -83,13 +78,13 @@
     isNormalUser = true;
     description = "jimbo";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    packages = with pkgs;
+      [
+        #  thunderbird
+      ];
   };
   #Enable fonts.fontDir
   fonts.fontDir.enable = true;
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

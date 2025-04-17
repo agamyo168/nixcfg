@@ -1,8 +1,5 @@
-{ config, pkgs, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    flatpak
-  ];
+{ config, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ flatpak ];
 
   # Enable Flatpak
   services.flatpak.enable = true;

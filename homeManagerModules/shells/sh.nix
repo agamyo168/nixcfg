@@ -8,6 +8,7 @@ let
     dotfiles = "cd ~/.dotfiles";
     "flake-switch" = "sudo nixos-rebuild switch --flake ~/.dotfiles#perry";
     "home-switch:perry" = "home-manager switch --flake ~/.dotfiles#perry";
+    "flake:update" = "nix flake update";
   };
 in
 {

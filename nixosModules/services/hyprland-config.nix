@@ -9,10 +9,10 @@
     #notification
     #dunst
     swaynotificationcenter
-    libnotify #dunst/swaync depends on libnotify to send notification
+    libnotify # dunst/swaync depends on libnotify to send notification
     #wallpaper daemon
     #swww
-    hyprpaper #for background
+    hyprpaper # for background
     #app launcher
     rofi-wayland
     #wofi # default launcher for hyprland
@@ -33,13 +33,16 @@
   ];
 
   # Fonts
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "CascadiaCode" "DroidSansMono" "Iosevka" ]; })
-  ];
+  fonts.packages = with pkgs;
+    [
+      (nerdfonts.override {
+        fonts = [ "CascadiaCode" "DroidSansMono" "Iosevka" ];
+      })
+    ];
 
   #Enabling hyprland on NixOS
   programs = {
-    hyprland.enable = true; #Enables hyprland
+    hyprland.enable = true; # Enables hyprland
     hyprland.xwayland.enable = true;
   };
 
