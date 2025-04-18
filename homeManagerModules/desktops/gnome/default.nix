@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.modules.gnome-extensions.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.gnome-extensions.enable {

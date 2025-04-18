@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.modules.vscodium.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.vscodium.enable {
@@ -11,7 +16,9 @@
       ];
     };
     home.packages = with pkgs; [
-      pkgs.nixpkgs-fmt # Nix language formatter
+      #pkgs.nixpkgs-fmt # Nix language formatter!
+      pkgs.nixfmt-rfc-style
+      pkgs.treefmt2
     ];
   };
 }

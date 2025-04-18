@@ -1,1 +1,6 @@
-{ ... }: { imports = [ ./gnome ./kde ]; }
+{
+  imports = [
+    ./gnome
+    ./kde
+  ];
+}

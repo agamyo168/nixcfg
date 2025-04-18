@@ -1,5 +1,5 @@
-{ ... }:{
-	imports = [
-		./sh.nix
-	];
+{
+  imports = [
+    ./sh.nix
+  ];
 }

@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixos-wsl = {
-    	url = "github:nix-community/NixOS-WSL/main";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -29,40 +29,51 @@
     };
 
   };
-  outputs = { self, nixpkgs,nixos-wsl, home-manager, stylix, nixvim, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixos-wsl,
+      home-manager,
+      stylix,
+      nixvim,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
-    in {
+    in
+    {
       nixosConfigurations = {
         perry = lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/perry stylix.nixosModules.stylix ];
-	};
+          modules = [
+            ./hosts/perry
+            stylix.nixosModules.stylix
+          ];
+        };
         wsl = lib.nixosSystem {
-	  inherit system;
-	  modules = [
-	  nixos-wsl.nixosModules.default
-	  ./wsl.nix ];
-	};
+          inherit system;
+          modules = [
+            nixos-wsl.nixosModules.default
+            ./wsl.nix
+          ];
+        };
       };
       homeConfigurations = {
 
-         
         wsl = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-          ./homes/wsl
-	  nixvim.homeManagerModules.nixvim
-	  # niri.homeModules.niri
+            ./homes/wsl
+            nixvim.homeManagerModules.nixvim
+            # niri.homeModules.niri
           ];
         };
- 
-        
+
         perry = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };

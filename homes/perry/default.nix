@@ -1,11 +1,18 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
   imports = [ ../../homeManagerModules ];
 
   home.packages = with pkgs; [
     #Apps programming
     nodejs_20
     #pkgs.python313
-    (python3.withPackages (ps: with ps; [ numpy pandas jupyter ]))
+    (python3.withPackages (
+      ps: with ps; [
+        numpy
+        pandas
+        jupyter
+      ]
+    ))
     #python312Packages.jupyter-core opencv vscode
 
     #Database--

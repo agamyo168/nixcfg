@@ -1,6 +1,11 @@
-{ config, lib, pkgs, ... }: {
-  options.nixosModules.desktop.kde.enable =
-    lib.mkEnableOption "KDE desktop environment";
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  options.nixosModules.desktop.kde.enable = lib.mkEnableOption "KDE desktop environment";
   config = lib.mkIf config.nixosModules.desktop.kde.enable {
     # What is that?
     services.xserver.enable = true;

@@ -1,4 +1,3 @@
-{ ... }:
 {
   imports = [
     ./distrobox.nix
@@ -13,4 +12,3 @@
     ./vivaldi
   ];
 }
-

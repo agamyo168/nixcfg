@@ -1,1 +1,4 @@
-{ pkgs, ... }: { environment.systemPackages = with pkgs; [ tailscale ]; }
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [ tailscale ];
+}

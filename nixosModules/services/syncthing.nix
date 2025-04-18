@@ -1,9 +1,14 @@
-{ config, pkgs, lib, ... }: {
-  environment.systemPackages = with pkgs;
-    [
-      #Apps
-      syncthing
-    ];
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
+    #Apps
+    syncthing
+  ];
   # services.syncthing = {
   #   enable = true;
   #   dataDir = "/home/jimbo"; # default location for new folders

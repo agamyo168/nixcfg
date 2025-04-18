@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.modules.nixvim.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.nixvim.enable {

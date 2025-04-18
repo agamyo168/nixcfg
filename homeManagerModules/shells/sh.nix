@@ -6,9 +6,11 @@ let
     ll = "eza -l";
     ".." = "cd ..";
     dotfiles = "cd ~/.dotfiles";
-    "flake-switch" = "sudo nixos-rebuild switch --flake ~/.dotfiles#perry";
+    "flake-switch:perry" = "sudo nixos-rebuild switch --flake ~/.dotfiles#perry";
     "home-switch:perry" = "home-manager switch --flake ~/.dotfiles#perry";
-    "flake:update" = "nix flake update";
+    "flake-update:perry" = "nix flake update";
+    "flake-boot:perry" = "sudo nixos-rebuild boot --flake ~/.dotfiles#perry";
+    "flake-test:perry" = "sudo nixos-rebuild test --flake ~/.dotfiles#perry";
   };
 in
 {

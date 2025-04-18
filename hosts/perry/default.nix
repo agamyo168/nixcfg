@@ -1,6 +1,10 @@
-{ lib, pkgs, ... }: {
-  imports =
-    [ ./configuration.nix ./hardware-configuration.nix ../../nixosModules ];
+{ lib, pkgs, ... }:
+{
+  imports = [
+    ./configuration.nix
+    ./hardware-configuration.nix
+    ../../nixosModules
+  ];
   programs.fish.enable = true;
   nixosModules = {
     desktop = {

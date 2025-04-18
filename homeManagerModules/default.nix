@@ -1,4 +1,3 @@
-{ ... }:
 {
   imports = [
     ./apps
@@ -6,4 +5,3 @@
     ./desktops
   ];
 }
-

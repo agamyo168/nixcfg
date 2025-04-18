@@ -1,5 +1,11 @@
-{ inputs, config, pkgs, ... }: {
-  #Install KiTTY because it works best with hyprland?  
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
+{
+  #Install KiTTY because it works best with hyprland?
   environment.systemPackages = with pkgs; [
     #the compositor itself hyprland
     hyprland
@@ -22,7 +28,7 @@
     noto-fonts-cjk-sans
     # screenshot tools
     hyprshot
-    # Theme 
+    # Theme
     nwg-look # gtk theme editor
     catppuccin-gtk
     # lockscreen
@@ -33,12 +39,15 @@
   ];
 
   # Fonts
-  fonts.packages = with pkgs;
-    [
-      (nerdfonts.override {
-        fonts = [ "CascadiaCode" "DroidSansMono" "Iosevka" ];
-      })
-    ];
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [
+        "CascadiaCode"
+        "DroidSansMono"
+        "Iosevka"
+      ];
+    })
+  ];
 
   #Enabling hyprland on NixOS
   programs = {

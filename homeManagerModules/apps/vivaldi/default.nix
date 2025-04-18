@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options.modules.vivaldi.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.vivaldi.enable {
@@ -8,8 +13,8 @@
     programs.chromium = {
       package = pkgs.vivaldi;
       extensions = [
-        "nngceckbapebfimnlniiiahkandclblb" #Bitwarden
-        "ddkjiahejlhfcafbddmgiahcphecmpfh" #Ublock lite
+        "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+        "ddkjiahejlhfcafbddmgiahcphecmpfh" # Ublock lite
       ];
     };
 
