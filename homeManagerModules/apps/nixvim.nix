@@ -12,5 +12,10 @@
       colorschemes.catppuccin.enable = true;
       plugins.lualine.enable = true;
     };
+
+    home.packages = with pkgs; [
+      #pkgs.nixpkgs-fmt # Nix language formatter!
+      pkgs.treefmt2
+    ];
   };
 }

@@ -46,7 +46,8 @@
 
     #ssh
     snips-sh
-
+    eza
+    fzf
     #nix
     rippkgs
     tealdeer
