@@ -3,7 +3,7 @@
 
 let
   myAliases = {
-    ll = "ls -l";
+    ll = "eza -l";
     ".." = "cd ..";
     dotfiles = "cd ~/.dotfiles";
     "flake-switch" = "sudo nixos-rebuild switch --flake ~/.dotfiles#perry";
@@ -24,4 +24,5 @@ in
   programs.starship = {
     enable = true;
   };
+  home.packages = with pkgs; [ fzf eza ];
 }
