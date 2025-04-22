@@ -5,7 +5,12 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -16,10 +21,21 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
   # Enable the Flakes feature and the accompanying new nix command-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   programs.fish.enable = true;
-  environment.systemPackages = with pkgs; [ git gh mpv gparted ];
+  users.defaultUserShell = pkgs.fish;
+
+  environment.systemPackages = with pkgs; [
+    git
+    gh
+    mpv
+    gparted
+    nh
+  ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It's perfectly fine and recommended to leave

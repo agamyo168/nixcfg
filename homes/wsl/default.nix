@@ -1,6 +1,6 @@
 {
   imports = [ ../../homeManagerModules ];
-   modules = {
+  modules = {
     vscodium.enable = true;
     git.enable = true;
     nixvim.enable = true;

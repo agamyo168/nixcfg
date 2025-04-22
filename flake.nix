@@ -1,5 +1,5 @@
 {
-  description = "My first flake!";
+  description = "NixOS :( :( !!";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -63,7 +63,6 @@
         };
       };
       homeConfigurations = {
-
         wsl = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
@@ -73,7 +72,6 @@
             # niri.homeModules.niri
           ];
         };
-
         perry = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };

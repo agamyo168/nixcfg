@@ -21,13 +21,16 @@
     pgadmin4
 
     #utility
-    htop
+    btop
     fastfetch
     gparted
     libreoffice-qt
     pdfsam-basic # pdf utility
     anki # flashcards
-
+    ventoy-full
+    syncplay
+    #syncthing 
+    
     #network
     burpsuite
     postman # backend utility for proping/testing api
@@ -41,13 +44,8 @@
     obs-studio
     krita
 
-    #boot
-    ventoy-full
-
     #ssh
     snips-sh
-    eza
-    fzf
     #nix
     rippkgs
     tealdeer

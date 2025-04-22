@@ -21,6 +21,7 @@
           OfferToSaveLogins = false;
           OfferToSaveLoginsDefault = false;
           PasswordManagerEnabled = false;
+	  #HardwareAcceleration = false; # Causes random freezes if true!!
           FirefoxHome = {
             Search = true;
             Pocket = false;
@@ -46,9 +47,7 @@
             ublock-origin
             bitwarden
             duckduckgo-privacy-essentials
-            sidebery
             sponsorblock
-            i-dont-care-about-cookies
             adaptive-tab-bar-colour
           ];
 

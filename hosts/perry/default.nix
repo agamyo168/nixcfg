@@ -5,11 +5,6 @@
     ./hardware-configuration.nix
     ../../nixosModules
   ];
-  programs.fish.enable = true;
-  nixosModules = {
-    desktop = {
-      kde.enable = true;
-      # gnome.enable = true;
-    };
-  };
+  
+  nixosModules ={ desktop.kde.enable = true; };
 }

@@ -5,11 +5,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-
-  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -23,7 +18,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  programs.fish.enable = true;
   # Default shell
   users.defaultUserShell = pkgs.fish;
   # Set your time zone.

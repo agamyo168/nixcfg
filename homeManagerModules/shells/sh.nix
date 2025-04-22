@@ -3,8 +3,9 @@
 
 let
   myAliases = {
-    ll = "eza -l";
-    ".." = "cd ..";
+    ll = "eza -lh --icons --grid --group-directories-first";
+    cd = "z";
+    #".." = "cd ..";
     dotfiles = "cd ~/.dotfiles";
     "flake-switch:perry" = "sudo nixos-rebuild switch --flake ~/.dotfiles#perry";
     "home-switch:perry" = "home-manager switch --flake ~/.dotfiles#perry";
@@ -26,5 +27,15 @@ in
   programs.starship = {
     enable = true;
   };
-  home.packages = with pkgs; [ fzf eza ];
+  programs.eza = {
+    enable = true;
+    git = true;
+  };
+  programs.zoxide = {
+    enable = true;
+  };
+  home.packages = with pkgs; [
+    fzf
+    kitty
+  ];
 }

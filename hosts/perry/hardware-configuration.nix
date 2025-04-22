@@ -24,6 +24,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/9dda780f-de42-4aae-a058-b5ff99cd9413";
     fsType = "ext4";
