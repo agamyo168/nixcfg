@@ -29,8 +29,8 @@
     anki # flashcards
     ventoy-full
     syncplay
-    #syncthing 
-    
+    #syncthing
+
     #network
     burpsuite
     postman # backend utility for proping/testing api

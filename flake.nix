@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,6 +37,7 @@
       nixos-wsl,
       home-manager,
       stylix,
+      chaotic,
       nixvim,
       ...
     }@inputs:
@@ -52,6 +54,9 @@
           modules = [
             ./hosts/perry
             stylix.nixosModules.stylix
+            chaotic.nixosModules.nyx-cache
+            chaotic.nixosModules.nyx-overlay
+            chaotic.nixosModules.nyx-registry
           ];
         };
         wsl = lib.nixosSystem {
