@@ -6,6 +6,7 @@
     ./vscodium.nix
     ./discord.nix
     ./yt-dlp.nix
+    ./exercism.nix
     ./proton.nix
     ./firefox
     ./vivaldi
