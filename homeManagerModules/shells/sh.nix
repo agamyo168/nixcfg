@@ -37,5 +37,6 @@ in
   home.packages = with pkgs; [
     fzf
     kitty
+    # awk
   ];
 }

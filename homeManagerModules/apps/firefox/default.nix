@@ -21,7 +21,7 @@
           OfferToSaveLogins = false;
           OfferToSaveLoginsDefault = false;
           PasswordManagerEnabled = false;
-          #HardwareAcceleration = false; # Causes random freezes if true!!
+          HardwareAcceleration = false; # Causes random freezes if true!!
           FirefoxHome = {
             Search = true;
             Pocket = false;

@@ -10,7 +10,12 @@
     programs.nixvim = {
       enable = true;
       colorschemes.catppuccin.enable = true;
-      plugins.lualine.enable = true;
+      plugins = {
+        lualine.enable = true;
+#	cord.enable = true; #cord-nvim
+	lazygit.enable = true;
+      };
+      extraPlugins = [ pkgs.vimPlugins.cord-nvim ];
       extraConfigLua = lib.fileContents ./init.lua;
     };
 

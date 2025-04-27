@@ -46,13 +46,13 @@
 
   hardware.nvidia.prime = {
     # Sync -> run dedicated all time
-     sync.enable = true;
+    sync.enable = true;
 
     #Offload -> run dedicated when it's necessary
-#    offload = {
-#      enable = true;
-#      enableOffloadCmd = true;
-#    };
+    #    offload = {
+    #      enable = true;
+    #      enableOffloadCmd = true;
+    #    };
     #integrated
     intelBusId = "PCI:0:2:0";
     # dedicated
