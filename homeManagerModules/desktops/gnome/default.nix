@@ -1,15 +1,15 @@
 {
-  config,
+  osConfig,
   lib,
   pkgs,
   ...
 }:
 {
-  options.modules.gnome-extensions.enable = lib.mkEnableOption "";
-  config = lib.mkIf config.modules.gnome-extensions.enable {
+  config = lib.mkIf osConfig.nixosModules.desktop.gnome.enable {
     home.packages = with pkgs; [
       gnome-tweaks
       dconf-editor
+      gnomeExtensions.easyeffects-preset-selector
       # #https://github.com/SUPERCILEX/gnome-clipboard-history
       gnomeExtensions.clipboard-history # Alt + F2 then r to restart gnome shell then write this to terminal gnome-extensions enable clipboard-history@alexsaveau.dev
       gnomeExtensions.paperwm

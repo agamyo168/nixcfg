@@ -21,7 +21,7 @@
           OfferToSaveLogins = false;
           OfferToSaveLoginsDefault = false;
           PasswordManagerEnabled = false;
-          HardwareAcceleration = false; # Causes random freezes if true!!
+          HardwareAcceleration = true; # Causes random freezes on Wayland KDE if true!!
           FirefoxHome = {
             Search = true;
             Pocket = false;

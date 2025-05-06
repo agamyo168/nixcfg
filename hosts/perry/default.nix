@@ -17,7 +17,8 @@
   #   };
   # };
   nixosModules = {
-    desktop.kde.enable = true;
+    desktop.gnome.enable = true;
+    desktop.kde.enable = false;
     apps.nh.enable = true; # I should make a core module and put all cool modules in it.
   };
 }

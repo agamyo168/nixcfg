@@ -6,6 +6,6 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     gamescopeSession.enable = true;
   };
-  environment.systemPackages = with pkgs; [ mangohud ];
+  environment.systemPackages = with pkgs; [ mangohud lutris];
   programs.gamemode.enable = true;
 }

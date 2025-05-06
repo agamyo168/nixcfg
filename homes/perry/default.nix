@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     #Apps programming
     nodejs_20
+    pkgs.elixir
     #pkgs.python313
     (python3.withPackages (
       ps: with ps; [
@@ -49,13 +50,13 @@
     #nix
     rippkgs
     tealdeer
+
+    vesktop
   ];
 
   modules = {
-
     discord.enable = true;
     obsidian.enable = true;
-    gnome-extensions.enable = true;
     vscodium.enable = true;
     git.enable = true;
     distrobox.enable = true;
