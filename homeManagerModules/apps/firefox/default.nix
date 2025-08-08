@@ -117,7 +117,7 @@
           id = 1;
           name = "work";
 
-          extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+          extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
             ublock-origin
             bitwarden
             duckduckgo-privacy-essentials

@@ -9,6 +9,14 @@
     #Apps
     syncthing
   ];
+  services.syncthing = {
+  	enable = true;
+	group = "syncthing";
+	user = "jimbo";
+	dataDir = "/home/jimbo/Documents";    # Default folder for new synced folders
+        configDir = "/home/jimbo/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+	openDefaultPorts = true;
+};
   #services.syncthing = {
   #enable = true;
   #   dataDir = "/home/jimbo"; # default location for new folders

@@ -13,9 +13,9 @@
       plugins = {
         #lualine.enable = true;
         #cord.enable = true; #cord-nvim
-        #lazygit.enable = true;
+        lazygit.enable = true;
       };
-      extraPlugins = [ pkgs.vimPlugins.cord-nvim ];
+      #extraPlugins = [ pkgs.vimPlugins.cord-nvim ];
       extraConfigLua = lib.fileContents ./init.lua;
     };
 

@@ -16,6 +16,11 @@
         };
       };
     };
+ # SSH AGENT
+ programs.ssh = {
+   enable = true;
+ };
+
     programs.git = {
       enable = true;
       userName = "agamyo168";
@@ -25,4 +30,6 @@
       };
     };
   };
+
+
 }

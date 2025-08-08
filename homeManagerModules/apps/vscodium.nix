@@ -11,7 +11,7 @@
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium;
-      extensions = with pkgs.vscode-extensions; [
+     profiles.default.extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide # Nix language LSP
       ];
     };

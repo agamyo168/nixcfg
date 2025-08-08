@@ -1,7 +1,11 @@
 { lib, pkgs, ... }:
 {
   imports = [ ../../homeManagerModules ];
-
+home.packages = with pkgs; [
+	nodejs_20
+        stremio
+        windsurf
+];
 /* home.packages = with pkgs; [
     #Apps programming
     nodejs_20
@@ -58,7 +62,7 @@
     vscodium.enable = true;
     git.enable = true;
     distrobox.enable = true;
-    #nixvim.enable = true;
+    nixvim.enable = true;
     firefox.enable = true;
   };
   # Home Manager needs a bit of information about you and the paths it should
