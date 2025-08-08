@@ -2,13 +2,13 @@
   description = "NixOS :( :( !!";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix = {
       url = "github:danth/stylix/release-24.11";
@@ -50,6 +50,11 @@
     in
     {
       nixosConfigurations = {
+         sunny = lib.nixosSystem {
+          modules = [
+            ./hosts/sunny
+          ];
+        };
         perry = lib.nixosSystem {
           modules = [
             ./hosts/perry
@@ -77,6 +82,15 @@
             # niri.homeModules.niri
           ];
         };
+  sunny = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./homes/sunny
+            nixvim.homeManagerModules.nixvim
+          ];
+        };
+
         perry = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
