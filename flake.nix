@@ -56,6 +56,7 @@
           ];
         };
         perry = lib.nixosSystem {
+	  inherit system;
           modules = [
             ./hosts/perry
             stylix.nixosModules.stylix

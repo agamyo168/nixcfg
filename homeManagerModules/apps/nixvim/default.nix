@@ -11,9 +11,9 @@
       enable = true;
       colorschemes.catppuccin.enable = true;
       plugins = {
-        lualine.enable = true;
-        #	cord.enable = true; #cord-nvim
-        lazygit.enable = true;
+        #lualine.enable = true;
+        #cord.enable = true; #cord-nvim
+        #lazygit.enable = true;
       };
       extraPlugins = [ pkgs.vimPlugins.cord-nvim ];
       extraConfigLua = lib.fileContents ./init.lua;
@@ -21,7 +21,7 @@
 
     home.packages = with pkgs; [
       #pkgs.nixpkgs-fmt # Nix language formatter!
-      pkgs.treefmt2
+      pkgs.treefmt
     ];
   };
 }

@@ -2,7 +2,7 @@
 {
   imports = [ ../../homeManagerModules ];
 
-  home.packages = with pkgs; [
+/* home.packages = with pkgs; [
     #Apps programming
     nodejs_20
     pkgs.elixir
@@ -28,7 +28,6 @@
     libreoffice-qt
     pdfsam-basic # pdf utility
     anki # flashcards
-    ventoy-full
     syncplay
     #syncthing
 
@@ -51,8 +50,7 @@
     rippkgs
     tealdeer
 
-    vesktop
-  ];
+  ]; */
 
   modules = {
     discord.enable = true;
@@ -60,7 +58,7 @@
     vscodium.enable = true;
     git.enable = true;
     distrobox.enable = true;
-    nixvim.enable = true;
+    #nixvim.enable = true;
     firefox.enable = true;
   };
   # Home Manager needs a bit of information about you and the paths it should

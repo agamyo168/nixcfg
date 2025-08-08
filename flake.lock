@@ -76,11 +76,19 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
+<<<<<<< Updated upstream
         "lastModified": 1753035671,
         "narHash": "sha256-F1EAebqC+De5rog6rK/jVTetEGrCKHR7q8wQHx3VqAM=",
         "owner": "chaotic-cx",
         "repo": "nyx",
         "rev": "57509273a21933c184eb1985efc06381879c09f1",
+=======
+        "lastModified": 1749224331,
+        "narHash": "sha256-pM362MsnU2oQwQ3+jBLlvwqSVuAhZmcm2+97flsqIMA=",
+        "owner": "chaotic-cx",
+        "repo": "nyx",
+        "rev": "1109c2cfdd262417b4d8148aa3cc1228679d9270",
+>>>>>>> Stashed changes
         "type": "github"
       },
       "original": {
@@ -111,6 +119,31 @@
         "type": "github"
       }
     },
+<<<<<<< Updated upstream
+=======
+    "fenix": {
+      "inputs": {
+        "nixpkgs": [
+          "chaotic",
+          "nixpkgs"
+        ],
+        "rust-analyzer-src": "rust-analyzer-src"
+      },
+      "locked": {
+        "lastModified": 1749105720,
+        "narHash": "sha256-R3mjXc+LF74COXMDfJLuKEUPliXqOqe0wgErgTOFovI=",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "fd217600040e0e7c7ea844af027f3dc1f4b35e6c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "fenix",
+        "type": "github"
+      }
+    },
+>>>>>>> Stashed changes
     "firefox-addons": {
       "inputs": {
         "nixpkgs": [

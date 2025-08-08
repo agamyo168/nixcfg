@@ -12,7 +12,10 @@
     # driSupport = true;
     # driSupport32Bit = true;
   };
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ 
+  "nvidia"
+   "modesetting"  # example for Intel iGPU; use "amdgpu" here instead if your iGPU is AMD
+  ];
   hardware.nvidia = {
 
     # Modesetting is required.
