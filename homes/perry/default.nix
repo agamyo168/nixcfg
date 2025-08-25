@@ -1,60 +1,65 @@
 { lib, pkgs, ... }:
 {
   imports = [ ../../homeManagerModules ];
-home.packages = with pkgs; [
-	nodejs_20
-        stremio
-        windsurf
-];
-/* home.packages = with pkgs; [
-    #Apps programming
+  home.packages = with pkgs; [
     nodejs_20
-    pkgs.elixir
-    #pkgs.python313
-    (python3.withPackages (
-      ps: with ps; [
-        numpy
-        pandas
-        jupyter
-      ]
-    ))
-    #python312Packages.jupyter-core opencv vscode
-
-    #Database--
-    dbeaver-bin
-    mysql-workbench
-    pgadmin4
-
-    #utility
-    btop
-    fastfetch
-    gparted
-    libreoffice-qt
-    pdfsam-basic # pdf utility
-    anki # flashcards
+    stremio
+    windsurf
     syncplay
-    #syncthing
-
-    #network
-    burpsuite
-    postman # backend utility for proping/testing api
-    ngrok
-    #tailscale
-
-    #media
+    btop
     mpv
-    shotcut # video editing UI
-    ffmpeg_7
-    obs-studio
-    krita
+  ];
+  /*
+    home.packages = with pkgs; [
+      #Apps programming
+      nodejs_20
+      pkgs.elixir
+      #pkgs.python313
+      (python3.withPackages (
+        ps: with ps; [
+          numpy
+          pandas
+          jupyter
+        ]
+      ))
+      #python312Packages.jupyter-core opencv vscode
 
-    #ssh
-    snips-sh
-    #nix
-    rippkgs
-    tealdeer
+      #Database--
+      dbeaver-bin
+      mysql-workbench
+      pgadmin4
 
-  ]; */
+      #utility
+      btop
+      fastfetch
+      gparted
+      libreoffice-qt
+      pdfsam-basic # pdf utility
+      anki # flashcards
+      syncplay
+      #syncthing
+
+      #network
+      burpsuite
+      postman # backend utility for proping/testing api
+      ngrok
+      #tailscale
+
+      #media
+      mpv
+      shotcut # video editing UI
+      ffmpeg_7
+      obs-studio
+      krita
+
+      #ssh
+      snips-sh
+      #nix
+      rippkgs
+      tealdeer
+
+    ];
+  */
 
   modules = {
     discord.enable = true;
