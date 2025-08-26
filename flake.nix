@@ -50,13 +50,25 @@
     in
     {
       nixosConfigurations = {
-         sunny = lib.nixosSystem {
+        sunny = lib.nixosSystem {
+          specialArgs = {
+            conHost = "sunny";
+            conUsername = "sunny";
+            conHome = "/home/sunny";
+            conFlakePath = "/home/sunny/nixcfg";
+          };
           modules = [
             ./hosts/sunny
           ];
         };
         perry = lib.nixosSystem {
-	  inherit system;
+          specialArgs = {
+            conHost = "perry";
+            conUsername = "jimbo";
+            conHome = "/home/jimbo";
+            conFlakePath = "/home/jimbo/.dotfiles";
+          };
+          inherit system;
           modules = [
             ./hosts/perry
             stylix.nixosModules.stylix
@@ -83,7 +95,7 @@
             # niri.homeModules.niri
           ];
         };
-  sunny = home-manager.lib.homeManagerConfiguration {
+        sunny = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
