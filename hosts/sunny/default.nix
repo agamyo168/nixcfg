@@ -2,6 +2,7 @@
   imports = [
       ../../nixosModules/apps/tv.nix
       ../../nixosModules/apps/nh.nix
+      ../../nixosModules/services/syncthing.nix
       ./configuration.nix
   ];
   nixosModules = {
