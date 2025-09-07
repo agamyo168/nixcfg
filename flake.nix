@@ -104,6 +104,16 @@
           ];
         };
 
+        focus = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./homes/focus
+            nixvim.homeManagerModules.nixvim
+            # niri.homeModules.niri
+          ];
+        };
+ 
         perry = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };

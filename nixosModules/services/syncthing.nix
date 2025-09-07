@@ -20,11 +20,11 @@
     guiAddress = "0.0.0.0:8384";
     #group = "users";
     configDir = conHome+"/.config/syncthing";
-    # overrideDevices = true;
-    # overrideFolders = true;
+     overrideDevices = true;
+     overrideFolders = true;
     settings.options.relaysEnabled = false;
     settings = {
-devices = {
+      devices = {
 		"perry" = {
 		 id = "OOKCAIU-NTTO2XW-NYGYI53-GPRZR7U-T64CPD4-EPNTXCK-4B6NQUK-KWG7JAA";
 		};

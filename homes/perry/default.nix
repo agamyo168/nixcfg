@@ -8,6 +8,8 @@
     syncplay
     btop
     mpv
+    obs-studio
+    qbittorrent
   ];
   /*
     home.packages = with pkgs; [
