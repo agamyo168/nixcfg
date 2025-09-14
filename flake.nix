@@ -113,7 +113,7 @@
             # niri.homeModules.niri
           ];
         };
- 
+
         perry = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };

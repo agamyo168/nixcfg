@@ -8,8 +8,14 @@
     syncplay
     btop
     mpv
+    #vivaldi
     obs-studio
     qbittorrent
+    protonvpn-gui
+    rar
+    #wine64   #wine
+    wineWowPackages.stable
+    winetricks
   ];
   /*
     home.packages = with pkgs; [
@@ -71,6 +77,7 @@
     distrobox.enable = true;
     nixvim.enable = true;
     firefox.enable = true;
+    vivaldi.enable = true;
   };
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

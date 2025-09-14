@@ -1,4 +1,9 @@
-{ config, pkgs,lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   options.nixosModules.apps.nh.enable = lib.mkEnableOption "Nix cli helper";
   config = lib.mkIf config.nixosModules.apps.nh.enable {

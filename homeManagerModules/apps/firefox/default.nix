@@ -43,15 +43,15 @@
           name = "perry";
           isDefault = true;
 
-          extensions = { 
-	  packages = with inputs.firefox-addons.packages.${pkgs.system}; [
-            ublock-origin
-            bitwarden
-            duckduckgo-privacy-essentials
-            sponsorblock
-            adaptive-tab-bar-colour
-          ];
-         };
+          extensions = {
+            packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+              ublock-origin
+              bitwarden
+              duckduckgo-privacy-essentials
+              sponsorblock
+              adaptive-tab-bar-colour
+            ];
+          };
           # http://kb.mozillazine.org/Category:Preferences
           # settings = {
           #   "browser.search.defaultenginename" = "duckduckgo";
