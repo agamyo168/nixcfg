@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    #  chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,7 +37,7 @@
       nixos-wsl,
       home-manager,
       stylix,
-      chaotic,
+      #    chaotic,
       nixvim,
       ...
     }@inputs:
@@ -68,13 +68,13 @@
             conHome = "/home/jimbo";
             conFlakePath = "/home/jimbo/.dotfiles";
           };
-          inherit system;
+          #inherit system;
           modules = [
             ./hosts/perry
             stylix.nixosModules.stylix
-            chaotic.nixosModules.nyx-cache
-            chaotic.nixosModules.nyx-overlay
-            chaotic.nixosModules.nyx-registry
+            # chaotic.nixosModules.nyx-cache
+            # chaotic.nixosModules.nyx-overlay
+            # chaotic.nixosModules.nyx-registry
           ];
         };
         wsl = lib.nixosSystem {

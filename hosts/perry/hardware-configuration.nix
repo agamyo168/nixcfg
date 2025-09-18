@@ -24,7 +24,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   # CachyOS kernel
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/9dda780f-de42-4aae-a058-b5ff99cd9413";

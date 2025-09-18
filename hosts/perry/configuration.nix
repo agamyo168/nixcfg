@@ -8,6 +8,9 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # CachyOs
+  # environment.systemPackages = [ pkgs.lan-mouse_git ];
+  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   networking.hostName = "perry"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

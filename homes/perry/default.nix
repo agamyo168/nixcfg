@@ -17,6 +17,14 @@
     wineWowPackages.stable
     winetricks
   ];
+
+  /*
+  Programming Languages
+  */
+  programs.direnv = {
+  	enable = true;
+	nix-direnv.enable = true;
+  };
   /*
     home.packages = with pkgs; [
       #Apps programming
