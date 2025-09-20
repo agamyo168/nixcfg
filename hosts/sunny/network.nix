@@ -1,7 +1,7 @@
 {
   networking = {
     hostName = "sunny"; # Define your hostname.
-    wireless.enable = true; # Enables wireless support via wpa_supplicant.
+    #wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
     # proxy.default = "http://user:password@proxy:port/";
