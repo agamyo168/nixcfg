@@ -16,14 +16,14 @@
     #wine64   #wine
     wineWowPackages.stable
     winetricks
+    dbeaver-bin # dbeaver
+    postman
   ];
 
-  /*
-  Programming Languages
-  */
+  # Programming Languages
   programs.direnv = {
-  	enable = true;
-	nix-direnv.enable = true;
+    enable = true;
+    nix-direnv.enable = true;
   };
   /*
     home.packages = with pkgs; [

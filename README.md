@@ -1,3 +1,6 @@
+<h1>My NixOS Config Files</h1>
+<img alt="nixos logo" src="nix.svg">
+
 ## Folder Structure
 
 I've structured my files based on what I've seen as popular way to organize your nix configs and also what seems more modular.
@@ -12,4 +15,3 @@ I've structured my files based on what I've seen as popular way to organize your
 - `perry` -> My personal laptop
 - `sunny` -> local server for self-hosting
 - `darwin` -> my work computer (Not included yet)
-
