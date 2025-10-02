@@ -3,6 +3,7 @@
     ../../nixosModules/apps/tv.nix
     ../../nixosModules/apps/nh.nix
     ../../nixosModules/services/syncthing.nix
+    ../../nixosModules/services/adguardhome.nix
     ./configuration.nix
   ];
   nixosModules = {
