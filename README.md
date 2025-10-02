@@ -7,7 +7,7 @@ I've structured my files based on what I've seen as popular way to organize your
 
 - `homeManagerModules/` -> Modules that I use for home-manager
 - `homes/` -> My home manager profiles
-- `hosts/` -> My personal laptop, local server and work laptop (soon)
+- `hosts/` -> My personal laptop, local server and work laptop
 - `nixosModules/` -> Services and DE that cannot run by home-manager
 
 ## Profiles
