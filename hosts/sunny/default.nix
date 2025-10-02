@@ -8,8 +8,11 @@
   nixosModules = {
     apps.nh.enable = true; # I should make a core module and put all cool modules in it.
     apps.tv.enable = true;
-  };
-  # Enable cron jobs
+    services.adguard.enable = true;
+};
+
+
+   # Enable cron jobs
    services.cron = {
     enable = true;
     systemCronJobs = [

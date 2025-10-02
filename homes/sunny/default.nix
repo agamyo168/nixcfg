@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 {
   imports = [ ../../homeManagerModules ];
-
+  
   modules = {
 
     git.enable = true;
