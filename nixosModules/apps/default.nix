@@ -6,6 +6,6 @@
     ./nh.nix
     ./tv.nix
     ./easyeffects.nix
-  ];
+   ];
 
 }

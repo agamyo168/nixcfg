@@ -5,6 +5,10 @@
   ...
 }:
 {
+  environment.systemPackages = with pkgs; [
+  mesa
+  mesa-demos
+  ];
   # Enable opengl
   hardware.graphics = {
     enable = true;
@@ -17,7 +21,6 @@
     "modesetting" # example for Intel iGPU; use "amdgpu" here instead if your iGPU is AMD
   ];
   hardware.nvidia = {
-
     # Modesetting is required.
     modesetting.enable = true;
 
@@ -45,11 +48,12 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+    #package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
   };
 
   hardware.nvidia.prime = {
     # Sync -> run dedicated all time
-    #sync.enable = true;
+#    sync.enable = true;
 
     #Offload -> run dedicated when it's necessary
     offload = {

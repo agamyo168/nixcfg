@@ -12,6 +12,7 @@
     obs-studio
     qbittorrent
     protonvpn-gui
+    ghostty
     rar
     #wine64   #wine
     wineWowPackages.stable
@@ -85,8 +86,9 @@
     distrobox.enable = true;
     nixvim.enable = true;
     firefox.enable = true;
-    vivaldi.enable = true;
-  };
+    #vivaldi.enable = true;
+    caprine.enable = true;
+   };
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jimbo";
