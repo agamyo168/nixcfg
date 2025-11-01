@@ -1,4 +1,3 @@
-{ lib, pkgs, ... }:
 {
   imports = [
     ./configuration.nix
@@ -19,6 +18,7 @@
   nixosModules = {
     desktop.gnome.enable = false;
     desktop.kde.enable = true;
+    desktop.niri.enable = true;
     apps.nh.enable = true; # I should make a core module and put all cool modules in it.
   };
 }

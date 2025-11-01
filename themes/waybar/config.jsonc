@@ -1,0 +1,139 @@
+{
+  "layer": "top",
+  "modules-left": ["group/distro", "niri/window"],
+  "modules-center": ["niri/workspaces"],
+  "modules-right": [
+    "mpris",
+    "network",
+    "group/system",
+    "tray",
+    "custom/notification",
+  ],
+  "group/distro": {
+    "orientation": "horizontal",
+    "modules": ["custom/distro", "clock"],
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": ["niri/language", "gamemode", "pulseaudio", "disk"],
+  },
+  // --- NIRI ---
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "visible": "",
+      "default": "",
+      "empty": "",
+    },
+  },
+
+  "niri/language": {
+    "format": "  {short}",
+    "tooltip-format": "{long}",
+  },
+  "niri/window": {
+    "format": "{title}",
+    "swap-icon-label": true,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
+      "(.*) - zsh": "> [$1]",
+    },
+  },
+  // --- Default Modules ---
+  "network": {
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": "󰈀  {ifname}",
+    "format-linked": "No Internet ⚠",
+    "format-disconnected": "  Disconnected",
+    "tooltip-format": "{ifname}  {ipaddr}/{cidr}\n{gwaddr}",
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+  },
+  "clock": {
+    "format": "{:%H:%M}  ",
+    "format-alt": "{:%a, %d. %b  %H:%M}",
+    "tooltip": false,
+  },
+  "mpris": {
+    "format": "{player_icon} {status_icon} {dynamic}",
+    "format-paused": "{player_icon} {status_icon} <i>{dynamic}</i>",
+    "max-length": 45,
+    "player-icons": {
+      "chromium": " ", // Icon for Chromium browser
+      "default": " ", // Default player icon
+      "firefox": " ", // Icon for Firefox browser
+      "mpv": " ", // Icon for MPV media player
+      "spotify": " ", // Icon for Spotify
+    },
+    "status-icons": {
+      "paused": "", // Icon when media is paused
+      "playing": "", // Icon when media is playing
+      "stopped": "", // Icon when media is stopped
+    },
+  },
+  "disk": {
+    "format": "  {percentage_used}%",
+  },
+
+  // gamemode block
+  "gamemode": {
+    "format": "󰊴",
+    "format-alt": "{glyph}",
+    "glyph": "󰊴",
+    "hide-not-running": true,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 20,
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}",
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "{icon} {volume}%",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"],
+      "default-muted": "󰝟",
+      "headphone": "󰋋",
+      "headphone-muted": "󰟎",
+      "headset": "󰋎",
+      "headset-muted": "󰋐",
+    },
+    "scroll-step": 5,
+    "escape": true,
+    "tooltip-format": "Output Device: {desc}",
+    "on-click": "pavucontrol",
+  },
+
+  // ---CUSTOM ---
+  "custom/distro": {
+    "format": "󱄅",
+    "on-click": "fuzzel",
+    "tooltip": false,
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+}

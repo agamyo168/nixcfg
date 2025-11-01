@@ -63,14 +63,25 @@
               timeout_ms = 500;
               lsp_format = "fallback";
             };
+            formatters = {
+              prettier = {
+                command = "prettier";
+                args = [
+                  "--stdin-filepath"
+                  "$FILENAME"
+                ];
+              };
+            };
+
             formatters_by_ft = {
-              "*" = [ "injected" ]; # Formats code blocks
               nix = [ "nixfmt" ];
               rust = [ "rustfmt" ];
               go = [ "golines" ];
+              json = [ "prettier" ];
+              #jsonc = [ "prettier" ];
+              css = [ "prettier" ];
             };
           };
-
         };
       };
       #extraPlugins = [ pkgs.vimPlugins.cord-nvim ];
@@ -80,6 +91,7 @@
     home.packages = with pkgs; [
       #pkgs.nixpkgs-fmt # Nix language formatter!
       pkgs.treefmt
+      nodePackages.prettier
     ];
   };
 }

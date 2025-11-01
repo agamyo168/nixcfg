@@ -1,3 +1,7 @@
 {
-  # imports = [ ./gnome ];
+  imports = [
+    #./gnome
+    ./niri
+  ];
+
 }

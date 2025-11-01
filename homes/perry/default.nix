@@ -79,6 +79,7 @@
   */
 
   modules = {
+    niri.enable = true;
     discord.enable = true;
     obsidian.enable = true;
     vscodium.enable = true;
@@ -88,7 +89,7 @@
     firefox.enable = true;
     #vivaldi.enable = true;
     caprine.enable = true;
-   };
+  };
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jimbo";

@@ -1,0 +1,117 @@
+@import "frappe.css";
+* {
+  border: none;
+  border-radius: 0;
+  font-family: JetBrainsMono;
+  font-size: 13px;
+  min-height: 0;
+  padding: 1px;
+}
+
+window#waybar {
+  /*  background-color: alpha(@base, 0.8); */
+  background-color: transparent;
+  color: @text;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+#window {
+  border-radius: 100px;
+  padding: 0px 10px;
+  background: @crust;
+}
+window#waybar.empty #window {
+  background: transparent;
+}
+
+#workspaces {
+  background: @crust;
+  border-radius: 100px;
+  margin: 0px 10px;
+}
+
+#workspaces button:hover {
+  background: transparent;
+}
+#workspaces button {
+  padding: 0 10px 0px 5px;
+  color: @text;
+}
+
+#workspaces button.active {
+  color: @teal;
+}
+#custom-distro {
+  padding: 0 13px 0 7px;
+  font-size: 24px;
+  border-radius: 15px;
+  color: @crust;
+  background: @lavender;
+}
+
+#clock {
+  color: @lavender;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0 10px;
+  border-radius: 15px;
+  background: @crust;
+}
+
+#distro {
+  border-radius: 15px;
+  margin-right: 5px;
+  background-color: @crust;
+}
+#custom-notification,
+#mpris,
+#tray,
+#system,
+#network {
+  border-radius: 16px;
+  padding: 0px 25px;
+  margin: 0px 3px;
+  color: @text;
+  background-color: @crust;
+}
+
+#mpris {
+  color: @peach;
+}
+
+#tray:hover,
+#custom-notification:hover,
+#mpris:hover,
+#system:hover,
+#network:hover {
+  background-color: @base;
+}
+#language,
+#pulseaudio,
+#disk {
+  margin: 0 2px;
+}
+/* I don't know / don't need */
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+window#waybar.termite {
+  background-color: #3f3f3f;
+}
+
+window#waybar.chromium {
+  background-color: #000000;
+  border: none;
+}

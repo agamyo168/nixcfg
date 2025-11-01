@@ -1,11 +1,13 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-
+  #Environment
+  environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Fix for electron apps.
+  # Fonts:
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+    #pkgs.nerd-fonts.fira-code
+  ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # CachyOs
@@ -79,16 +81,13 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
   };
   #Enable fonts.fontDir
   fonts.fontDir.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
- nixpkgs.config.nvidia.acceptLicense = true;
+  nixpkgs.config.nvidia.acceptLicense = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # environment.systemPackages = with pkgs; [

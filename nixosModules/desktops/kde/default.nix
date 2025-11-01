@@ -1,12 +1,14 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
+let
+  inherit (lib) mkIf mkEnableOption;
+in
 {
-  options.nixosModules.desktop.kde.enable = lib.mkEnableOption "KDE desktop environment";
-  config = lib.mkIf config.nixosModules.desktop.kde.enable {
+  options.nixosModules.desktop.kde.enable = mkEnableOption "KDE desktop environment";
+  config = mkIf config.nixosModules.desktop.kde.enable {
     # What is that?
     services.xserver.enable = true;
     services.displayManager.sddm.enable = true;
