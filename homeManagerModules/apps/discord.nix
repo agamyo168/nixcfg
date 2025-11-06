@@ -9,8 +9,8 @@
   config = lib.mkIf config.modules.discord.enable {
     home.packages = with pkgs; [
       #discord
-      legcord
-      #vesktop
+      #legcord
+      vesktop
     ];
   };
 

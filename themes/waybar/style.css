@@ -63,13 +63,24 @@ window#waybar.empty #window {
   margin-right: 5px;
   background-color: @crust;
 }
-#custom-notification,
+#custom-notification {
+  padding: 0px 15px 0px 10px;
+  background: @peach;
+  border-radius: 15px;
+  color: @crust;
+}
 #mpris,
-#tray,
-#system,
-#network {
+#tray {
   border-radius: 16px;
   padding: 0px 25px;
+  margin: 0px 3px;
+  color: @text;
+  background-color: @crust;
+}
+
+#system {
+  border-radius: 16px;
+  padding: 0px 0px 0px 25px;
   margin: 0px 3px;
   color: @text;
   background-color: @crust;
@@ -79,13 +90,10 @@ window#waybar.empty #window {
   color: @peach;
 }
 
-#tray:hover,
-#custom-notification:hover,
-#mpris:hover,
-#system:hover,
-#network:hover {
+#mpris:hover {
   background-color: @base;
 }
+
 #language,
 #pulseaudio,
 #disk {

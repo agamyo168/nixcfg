@@ -4,10 +4,9 @@
   "modules-center": ["niri/workspaces"],
   "modules-right": [
     "mpris",
-    "network",
-    "group/system",
-    "tray",
-    "custom/notification",
+    "group/system"
+    //"tray",
+   // "custom/notification",
   ],
   "group/distro": {
     "orientation": "horizontal",
@@ -15,7 +14,7 @@
   },
   "group/system": {
     "orientation": "horizontal",
-    "modules": ["niri/language", "gamemode", "pulseaudio", "disk"],
+    "modules": ["niri/language", "gamemode", "pulseaudio", "disk", "tray", "custom/notification"],
   },
   // --- NIRI ---
   "niri/workspaces": {
@@ -27,6 +26,7 @@
       "default": "",
       "empty": "",
     },
+
   },
 
   "niri/language": {
@@ -37,25 +37,25 @@
     "format": "{title}",
     "swap-icon-label": true,
     "separate-outputs": true,
-    "rewrite": {
-      "(.*) - Mozilla Firefox": "🌎 $1",
-      "(.*) - zsh": "> [$1]",
-    },
   },
   // --- Default Modules ---
+  //Don't need Network Module while usign nm-applet
   "network": {
-    "format-wifi": " {essid} ({signalStrength}%)",
-    "format-ethernet": "󰈀  {ifname}",
-    "format-linked": "No Internet ⚠",
-    "format-disconnected": "  Disconnected",
-    "tooltip-format": "{ifname}  {ipaddr}/{cidr}\n{gwaddr}",
+    "tooltip": true,
+    "format-wifi": "    {bandwidthDownBytes}",
+    "format-ethernet": "󰈀   {bandwidthDownBytes}",
+    "tooltip-format": "Network= {essid}\nSignal strength= {signaldBm}dBm ({signalStrength}%)\nFrequency= {frequency}MHz\nInterface= {ifname}\nIP= {ipaddr}/{cidr}\nGateway= {gwaddr}\nNetmask= {netmask}",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󰖪 ",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2,
   },
   "tray": {
     "icon-size": 21,
     "spacing": 10,
   },
   "clock": {
-    "format": "{:%H:%M}  ",
+    "format": "{:%I:%M %p}  ",
     "format-alt": "{:%a, %d. %b  %H:%M}",
     "tooltip": false,
   },

@@ -18,7 +18,9 @@
     wineWowPackages.stable
     winetricks
     dbeaver-bin # dbeaver
+    yaak
     postman
+    ngrok
   ];
 
   # Programming Languages
