@@ -4,6 +4,7 @@
   "modules-center": ["niri/workspaces"],
   "modules-right": [
     "mpris",
+    "tray",
     "group/system"
     //"tray",
    // "custom/notification",
@@ -14,7 +15,7 @@
   },
   "group/system": {
     "orientation": "horizontal",
-    "modules": ["niri/language", "gamemode", "pulseaudio", "disk", "tray", "custom/notification"],
+    "modules": ["niri/language", "pulseaudio", "custom/notification"],
   },
   // --- NIRI ---
   "niri/workspaces": {
@@ -30,7 +31,9 @@
   },
 
   "niri/language": {
-    "format": "  {short}",
+    "format": "{}",
+    "format-en": "  US",
+    "format-ar": "عربي",
     "tooltip-format": "{long}",
   },
   "niri/window": {

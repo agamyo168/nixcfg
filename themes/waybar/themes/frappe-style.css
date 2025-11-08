@@ -1,142 +1,125 @@
-@import "./css/gruvbox-dark.css";
-
+@import "./css/frappe.css";
 * {
   border: none;
   border-radius: 0;
   font-family: JetBrainsMono;
   font-size: 13px;
   min-height: 0;
-  padding: 5px;
+  padding: 1px;
 }
 
-/* Waybar base */
 window#waybar {
+  /*  background-color: alpha(@base, 0.8); */
   background-color: transparent;
-  color: @fg;
+  color: @text;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
-
-/* Active window name */
 #window {
   border-radius: 100px;
   padding: 0px 10px;
-  background: @bg2;
+  background: @crust;
 }
 window#waybar.empty #window {
   background: transparent;
 }
 
-/* Workspaces */
 #workspaces {
-  background: @bg2;
+  background: @crust;
   border-radius: 100px;
   margin: 0px 10px;
 }
 
+#workspaces button:hover {
+  background: transparent;
+}
 #workspaces button {
   padding: 0 10px 0px 5px;
-  color: @fg1;
-}
-#workspaces button:hover {
-  background: @bg3;
-  border-radius: 100px;
-}
-#workspaces button.active {
-  color: @aqua;
+  color: @text;
 }
 
-/* Distro logo block */
+#workspaces button.active {
+  color: @teal;
+}
 #custom-distro {
   padding: 0 13px 0 7px;
   font-size: 24px;
   border-radius: 15px;
-  color: @bg;
-  background: @yellow;
+  color: @crust;
+  background: @lavender;
 }
 
-/* Clock */
 #clock {
-  color: @yellow;
+  color: @lavender;
   font-weight: 700;
   font-size: 16px;
   padding: 0 10px;
   border-radius: 15px;
-  background: @bg2;
+  background: @crust;
 }
 
-/* Distro block (icon/image) */
 #distro {
   border-radius: 15px;
   margin-right: 5px;
-  background-color: @bg2;
+  background-color: @crust;
 }
-
-/* Notifications */
 #custom-notification {
   padding: 0px 15px 0px 10px;
-  background: @orange;
+  background: @peach;
   border-radius: 15px;
-  color: @bg;
+  color: @crust;
 }
-
-/* MPRIS + Tray */
 #mpris,
 #tray {
   border-radius: 16px;
-  padding: 0px 10px;
+  padding: 0px 25px;
   margin: 0px 3px;
-  color: @fg1;
-  background-color: @bg2;
+  color: @text;
+  background-color: @crust;
 }
 
-/* System area */
 #system {
   border-radius: 16px;
+  padding: 0px 0px 0px 25px;
   margin: 0px 3px;
-  color: @fg1;
-  background-color: @bg2;
+  color: @text;
+  background-color: @crust;
 }
 
-/* MPRIS active highlight */
 #mpris {
-  color: @orange;
-}
-#mpris:hover {
-  background-color: @bg3;
+  color: @peach;
 }
 
-/* Other modules */
+#mpris:hover {
+  background-color: @base;
+}
+
 #language,
 #pulseaudio,
 #disk {
-  font-weight: 700;
-  font-size: 16px;
   margin: 0 2px;
 }
+/* I don't know / don't need */
 
-/* Blink animation (rarely used but themed) */
 @keyframes blink {
   to {
-    background-color: @fg;
-    color: @bg;
+    background-color: #ffffff;
+    color: black;
   }
 }
 
-/* Tooltip styling */
 tooltip {
-  background: alpha(@bg_s, 0.9);
-  border: 1px solid alpha(@bg4, 0.6);
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
 }
 tooltip label {
-  color: @fg;
+  color: white;
+}
+window#waybar.termite {
+  background-color: #3f3f3f;
 }
 
-/* App-specific window overrides */
-window#waybar.termite {
-  background-color: @bg1;
-}
 window#waybar.chromium {
-  background-color: @bg_h;
+  background-color: #000000;
   border: none;
 }

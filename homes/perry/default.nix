@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [ ../../homeManagerModules ];
   home.packages = with pkgs; [

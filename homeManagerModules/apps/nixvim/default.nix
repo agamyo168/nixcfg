@@ -41,7 +41,8 @@
           lspBufAction = "hover";
         }
       ];
-      colorschemes.catppuccin.enable = true;
+      colorschemes.gruvbox.enable = true;
+      #colorschemes.catpuccin.enable = true;
       plugins = {
         #lualine.enable = true;
         cord.enable = true; # cord-nvim

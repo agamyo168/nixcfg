@@ -11,7 +11,7 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
@@ -120,6 +120,7 @@
           modules = [
             ./homes/perry
             nixvim.homeManagerModules.nixvim
+            stylix.homeModules.stylix
             # niri.homeModules.niri
           ];
         };
