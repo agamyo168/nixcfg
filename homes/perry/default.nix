@@ -1,9 +1,13 @@
 { pkgs, ... }:
 {
   imports = [ ../../homeManagerModules ];
+  nixpkgs.overlays = [ (import ../../overlays/jellyfin-rpc.nix) ];
+
   home.packages = with pkgs; [
     nodejs_20
-    stremio
+    #STREAMING:
+    jellyfin-rpc
+    #stremio
     windsurf
     syncplay
     btop
@@ -21,6 +25,8 @@
     yaak
     postman
     ngrok
+    #programming languages:
+    go
   ];
 
   # Programming Languages
@@ -28,57 +34,6 @@
     enable = true;
     nix-direnv.enable = true;
   };
-  /*
-    home.packages = with pkgs; [
-      #Apps programming
-      nodejs_20
-      pkgs.elixir
-      #pkgs.python313
-      (python3.withPackages (
-        ps: with ps; [
-          numpy
-          pandas
-          jupyter
-        ]
-      ))
-      #python312Packages.jupyter-core opencv vscode
-
-      #Database--
-      dbeaver-bin
-      mysql-workbench
-      pgadmin4
-
-      #utility
-      btop
-      fastfetch
-      gparted
-      libreoffice-qt
-      pdfsam-basic # pdf utility
-      anki # flashcards
-      syncplay
-      #syncthing
-
-      #network
-      burpsuite
-      postman # backend utility for proping/testing api
-      ngrok
-      #tailscale
-
-      #media
-      mpv
-      shotcut # video editing UI
-      ffmpeg_7
-      obs-studio
-      krita
-
-      #ssh
-      snips-sh
-      #nix
-      rippkgs
-      tealdeer
-
-    ];
-  */
 
   modules = {
     niri.enable = true;

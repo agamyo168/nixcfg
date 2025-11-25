@@ -17,8 +17,8 @@
     };
     home.packages = with pkgs; [
       #pkgs.nixpkgs-fmt # Nix language formatter!
-      pkgs.nixfmt-rfc-style
-      pkgs.treefmt
+      nixfmt-rfc-style
+      treefmt
     ];
   };
 }

@@ -54,6 +54,7 @@
             gopls.enable = true;
           };
         };
+        comment.enable = true;
         lazygit.enable = true;
         web-devicons.enable = true;
         telescope.enable = true;
@@ -92,6 +93,7 @@
     home.packages = with pkgs; [
       #pkgs.nixpkgs-fmt # Nix language formatter!
       pkgs.treefmt
+      pkgs.golines
       nodePackages.prettier
     ];
   };

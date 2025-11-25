@@ -4,6 +4,7 @@
   config,
   ...
 }:
+
 {
   options.modules.discord.enable = lib.mkEnableOption "";
   config = lib.mkIf config.modules.discord.enable {
@@ -12,6 +13,7 @@
       #legcord
       vesktop
     ];
+
   };
 
 }
