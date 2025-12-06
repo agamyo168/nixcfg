@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     #Apps
-    docker_27
+    docker_28
     docker-compose
 
   ];

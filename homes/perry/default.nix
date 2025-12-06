@@ -6,6 +6,8 @@
   home.packages = with pkgs; [
     nodejs_20
     #STREAMING:
+    android-studio
+    youtube-music
     jellyfin-rpc
     #stremio
     windsurf
@@ -30,6 +32,7 @@
   ];
 
   # Programming Languages
+  nixpkgs.config.android_sdk.accept_license = true;
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
@@ -37,7 +40,7 @@
 
   modules = {
     niri.enable = true;
-    discord.enable = true;
+    discord.enable = false;
     obsidian.enable = true;
     vscodium.enable = true;
     git.enable = true;

@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 let
   yt-dlp-override = pkgs.yt-dlp.overrideAttrs (oldAttrs: {
     version = "2025.01.26";

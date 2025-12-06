@@ -94,6 +94,7 @@
       #pkgs.nixpkgs-fmt # Nix language formatter!
       pkgs.treefmt
       pkgs.golines
+      pkgs.ripgrep
       nodePackages.prettier
     ];
   };

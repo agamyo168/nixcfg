@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 {
@@ -19,13 +18,13 @@
     # SSH AGENT
     programs.ssh = {
       enable = true;
-    };
+      enableDefaultConfig = false;
+      #      matchBlock = "*";
 
+    };
     programs.git = {
       enable = true;
-      userName = "agamyo168";
-      userEmail = "agamyo168@gmail.com";
-      extraConfig = {
+      settings = {
         init.defaultBranch = "main";
       };
     };

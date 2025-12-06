@@ -2,28 +2,23 @@
   description = "NixOS :( :( !!";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    #  chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix = {
-      url = "github:danth/stylix/release-25.05";
+      url = "github:danth/stylix/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      # url = "github:nix-community/nixvim";
-      # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-      url = "github:nix-community/nixvim/nixos-25.05";
+      url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # niri = {
-    #   url = "github:sodiboo/niri-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,7 +32,6 @@
       nixos-wsl,
       home-manager,
       stylix,
-      #    chaotic,
       nixvim,
       ...
     }@inputs:
@@ -68,13 +62,9 @@
             conHome = "/home/jimbo";
             conFlakePath = "/home/jimbo/.dotfiles";
           };
-          #inherit system;
           modules = [
             ./hosts/perry
             stylix.nixosModules.stylix
-            # chaotic.nixosModules.nyx-cache
-            # chaotic.nixosModules.nyx-overlay
-            # chaotic.nixosModules.nyx-registry
           ];
         };
         wsl = lib.nixosSystem {
@@ -92,7 +82,6 @@
           modules = [
             ./homes/wsl
             nixvim.homeManagerModules.nixvim
-            # niri.homeModules.niri
           ];
         };
         sunny = home-manager.lib.homeManagerConfiguration {
@@ -110,7 +99,6 @@
           modules = [
             ./homes/focus
             nixvim.homeManagerModules.nixvim
-            # niri.homeModules.niri
           ];
         };
 
@@ -121,7 +109,6 @@
             ./homes/perry
             nixvim.homeManagerModules.nixvim
             stylix.homeModules.stylix
-            # niri.homeModules.niri
           ];
         };
       };
