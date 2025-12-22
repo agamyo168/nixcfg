@@ -4,6 +4,7 @@
   nixpkgs.overlays = [ (import ../../overlays/jellyfin-rpc.nix) ];
 
   home.packages = with pkgs; [
+    samba
     nodejs_20
     #STREAMING:
     android-studio
@@ -47,7 +48,7 @@
     distrobox.enable = true;
     nixvim.enable = true;
     firefox.enable = true;
-    #vivaldi.enable = true;
+    vivaldi.enable = true;
     caprine.enable = true;
   };
   # Home Manager needs a bit of information about you and the paths it should
