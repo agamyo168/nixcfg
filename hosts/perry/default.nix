@@ -15,6 +15,7 @@
   #     flake-registry = "";
   #   };
   # };
+
   nixosModules = {
     desktop.gnome.enable = false;
     desktop.kde.enable = true;

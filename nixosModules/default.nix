@@ -3,6 +3,7 @@
     ./services
     ./apps
     ./desktops
+    ./hardware
     ./stylix
   ];
 }
