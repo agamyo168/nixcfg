@@ -4,6 +4,7 @@
     ../../nixosModules/apps/nh.nix
     ../../nixosModules/services/syncthing.nix
     ../../nixosModules/services/adguardhome.nix
+    ../../nixosModules/services/tailscale
     ./configuration.nix
   ];
   nixosModules = {
