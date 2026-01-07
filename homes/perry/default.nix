@@ -4,8 +4,8 @@
   nixpkgs.overlays = [ (import ../../overlays/jellyfin-rpc.nix) ];
 
   home.packages = with pkgs; [
-    samba
-    nodejs_20
+    pm2
+    nodejs_24
     #STREAMING:
     android-studio
     youtube-music
@@ -28,8 +28,6 @@
     yaak
     postman
     ngrok
-    #programming languages:
-    go
   ];
 
   # Programming Languages

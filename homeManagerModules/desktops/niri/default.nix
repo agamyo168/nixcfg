@@ -16,16 +16,7 @@ in
       mimeApps = {
         enable = true;
         defaultApplications = {
-          "inode/directory" = [ "pcmanfm.desktop" ]; # Directories
-          "text/plain" = [ "emacsclient.desktop" ]; # Plain text
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [
-            "onlyoffice-desktopeditors.desktop"
-          ]; # .docx
-          "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [
-            "onlyoffice-desktopeditors.desktop"
-          ]; # .pptx
-          "application/pdf" = [ "onlyoffice-desktopeditors.desktop" ]; # .pdf
-          "application/zip" = [ "xarchiver.desktop" ];
+          "application/pdf" = [ "zathura.desktop" ]; # .pdf
           "text/*" = [ "emacsclient.desktop" ]; # Any text files
           "video/*" = [ "mpv.desktop" ]; # Any video files
           "x-scheme-handler/https" = [ "firefox.desktop" ]; # Links
@@ -120,6 +111,8 @@ in
       vicinae
       gradia
       slurp
+      zathura
+      feh
       wayfreeze
       #grim
     ];
