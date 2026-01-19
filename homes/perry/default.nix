@@ -4,7 +4,8 @@
   nixpkgs.overlays = [ (import ../../overlays/jellyfin-rpc.nix) ];
 
   home.packages = with pkgs; [
-    pm2
+    discord
+    #pm2
     nodejs_24
     #STREAMING:
     android-studio
@@ -14,6 +15,7 @@
     windsurf
     syncplay
     btop
+    nvtopPackages.full
     mpv
     #vivaldi
     obs-studio

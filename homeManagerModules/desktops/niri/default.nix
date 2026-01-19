@@ -11,6 +11,7 @@ in
 {
   options.modules.niri.enable = mkEnableOption "";
   config = mkIf config.modules.niri.enable {
+
     xdg = {
       configFile."niri/config.kdl".source = ./config.kdl;
       mimeApps = {
@@ -27,6 +28,7 @@ in
           "image/jpeg" = [ "feh.desktop" ];
         };
       };
+  };
 
       stylix.enable = true;
       stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
@@ -115,6 +117,5 @@ in
         wayfreeze
         #grim
       ];
-    };
-  };
+};
 }

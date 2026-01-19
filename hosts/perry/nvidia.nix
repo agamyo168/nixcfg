@@ -6,13 +6,17 @@
 }:
 {
   environment.systemPackages = with pkgs; [
-  mesa
-  mesa-demos
+    mesa
+    mesa-demos
   ];
   # Enable opengl
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [ nvidia-vaapi-driver ];
+    extraPackages = with pkgs; [
+      nvidia-vaapi-driver
+      intel-media-driver
+      #intel-compute-runtime
+    ];
     # driSupport = true;
     # driSupport32Bit = true;
   };
@@ -53,7 +57,7 @@
 
   hardware.nvidia.prime = {
     # Sync -> run dedicated all time
-#    sync.enable = true;
+    #    sync.enable = true;
 
     #Offload -> run dedicated when it's necessary
     offload = {

@@ -18,6 +18,12 @@
           action = "<cmd>Telescope find_files<cr>";
           options.desc = "Find files";
         }
+        {
+          mode = "n";
+          key = "<leader>fg";
+          action = "<cmd>Telescope live_grep<cr>";
+          options.desc = "Search files by text";
+        }
       ];
       lsp.keymaps = [
         {
