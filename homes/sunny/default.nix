@@ -1,12 +1,16 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [ ../../homeManagerModules ];
-
+ 
   modules = {
 
+    nixvim.enable = true;
     git.enable = true;
   };
-
+  #Packages
+  home.packages = with pkgs; [
+	aria2
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "sunny";

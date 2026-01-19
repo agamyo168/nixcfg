@@ -9,7 +9,7 @@
   config = lib.mkIf config.nixosModules.services.calibre-web.enable {
 
     environment.systemPackages = with pkgs; [
-      calibre-web
+#      calibre-web
     ];
   };
 }
