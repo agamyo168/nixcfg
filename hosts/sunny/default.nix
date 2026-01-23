@@ -6,7 +6,7 @@
     ../../nixosModules/services/adguardhome.nix
     ../../nixosModules/services/tailscale
     ../../nixosModules/services/calibre-web.nix
-./configuration.nix
+    ./configuration.nix
   ];
   nixosModules = {
     apps.nh.enable = true; # I should make a core module and put all cool modules in it.
@@ -14,7 +14,10 @@
     #services.adguard.enable = true;
     services.calibre-web.enable = true;
   };
-
+  nix.settings.trusted-users = [
+    "root"
+    "sunny"
+  ];
   # Enable cron jobs
   services.cron = {
     enable = true;
