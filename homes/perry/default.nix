@@ -4,6 +4,7 @@
   nixpkgs.overlays = [ (import ../../overlays/jellyfin-rpc.nix) ];
 
   home.packages = with pkgs; [
+    xournalpp
     discord
     #pm2
     nodejs_24

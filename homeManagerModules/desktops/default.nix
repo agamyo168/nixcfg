@@ -1,7 +1,7 @@
 {
   imports = [
     #./gnome
-#    ./niri
+    ./niri
   ];
 
 }
