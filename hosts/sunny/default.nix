@@ -1,6 +1,7 @@
 {
   imports = [
     ../../nixosModules/apps/tv.nix
+    ../../nixosModules/apps/finance.nix
     ../../nixosModules/apps/nh.nix
     ../../nixosModules/services/syncthing.nix
     ../../nixosModules/services/adguardhome.nix
@@ -11,6 +12,7 @@
   nixosModules = {
     apps.nh.enable = true; # I should make a core module and put all cool modules in it.
     apps.tv.enable = true;
+    apps.finance.enable = true;
     #services.adguard.enable = true;
     services.calibre-web.enable = true;
   };

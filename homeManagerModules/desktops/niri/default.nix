@@ -17,7 +17,7 @@ in
       mimeApps = {
         enable = true;
         defaultApplications = {
-          "application/pdf" = [ "zathura.desktop" ]; # .pdf
+          "application/pdf" = [ "xournalpp.desktop" ]; # .pdf
           "text/*" = [ "emacsclient.desktop" ]; # Any text files
           "video/*" = [ "mpv.desktop" ]; # Any video files
           "x-scheme-handler/https" = [ "firefox.desktop" ]; # Links
@@ -26,6 +26,7 @@ in
           "image/*" = [ "feh.desktop" ]; # Images
           "image/png" = [ "feh.desktop" ];
           "image/jpeg" = [ "feh.desktop" ];
+          "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
         };
       };
     };

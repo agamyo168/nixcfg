@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   #Environment
@@ -8,8 +8,30 @@
     pkgs.nerd-fonts.jetbrains-mono
     #pkgs.nerd-fonts.fira-code
   ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    # Plymouth
+    plymouth = lib.mkForce {
+      enable = true;
+      themePackages = with pkgs; [
+        plymouth-blahaj-theme
+      ];
+      theme = "blahaj";
+    };
+    loader.timeout = 0;
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+    ];
+  };
   # CachyOs
   # environment.systemPackages = [ pkgs.lan-mouse_git ];
   #boot.kernelPackages = pkgs.linuxPackages_cachyos;

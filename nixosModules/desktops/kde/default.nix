@@ -33,6 +33,7 @@ in
       xclip # Tool to access the X clipboard from a console application
     ];
     environment.plasma6.excludePackages = with pkgs; [
+      kdePackages.dolphin
       kdePackages.elisa # Simple music player aiming to provide a nice experience for its users
       kdePackages.kdepim-runtime # Akonadi agents and resources
       kdePackages.kmahjongg # KMahjongg is a tile matching game for one or two players
